@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Calendar from 'primevue/calendar';
-import Dropdown from 'primevue/dropdown';
+import DatePicker from 'primevue/datepicker';
+import Select from 'primevue/select';
 import { onMounted, ref, watchEffect } from 'vue';
 import { defaultOptions, usePrimeVue } from 'primevue/config';
 
@@ -60,7 +60,7 @@ async function updatePrimeVueConfigWithLocaleTag(localeTag) {
     <div>Selected locale: {{ selectedLocale }}</div>
 
     <div style="width: 200px">
-      <Dropdown
+      <Select
           v-model="selectedLocale"
           :options="localeOptions"
           placeholder="Select a locale"
@@ -69,7 +69,7 @@ async function updatePrimeVueConfigWithLocaleTag(localeTag) {
     </div>
 
     <div style="width: 200px">
-      <Calendar v-model="date"/>
+      <DatePicker v-model="date"/>
     </div>
   </div>
 </template>
